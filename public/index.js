@@ -12,6 +12,16 @@ if ("geolocation" in navigator) {
     const long = round(position.coords.longitude, 2);
     d.querySelector("#latitude").innerText = lat;
     d.querySelector("#longitude").innerText = long;
+
+    const data = { lat, long };
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    };
+    fetch("/api", options);
   });
 } else {
   console.log("geolocation is not avaliable");

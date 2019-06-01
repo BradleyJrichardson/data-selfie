@@ -9,8 +9,9 @@
 
 ## Technologies
 
-Leaflet.js used to display the map on the page  
-Thanks to [open map tiles](https://openmaptiles.org/docs/website/leaflet/) for the vector tiles used
+> nodemon
+> [run a server with nodemon server.js]
+> will continulously update during development
 
 #
 
@@ -52,6 +53,16 @@ we then log the output of this function to get an idea of the data it brings bac
 then we proceed to select elements from the dom and fill their inner text with the respected lat and long
 
 ### Routing
+
+```javascript
+server.post("/api", (req, res) => {
+  res.send("POST request to the homepage");
+});
+```
+
+the request variable holds all the information that you are recevinging form the client
+the response variable is something you can send back to the client
+sud
 
 ### JSON Parsing
 
