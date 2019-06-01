@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Express server</title>
+  </head>
+  <body>
+    <script>
+      if ("geolocation" in navigator) {
+        console.log("geolocation is avaliable");
+        navigator.geolocation.getCurrentPosition(function(position) {
+          do_something(position.coords.latitude, position.coords.longitude);
+        });
+      } else {
+        console.log("geolocation is not avaliable");
+      }
+    </script>
+    <h1>Data Selfie App</h1>
+  </body>
+</html>
