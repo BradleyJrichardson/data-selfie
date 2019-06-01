@@ -19,7 +19,7 @@
 
       if ("geolocation" in navigator) {
         console.log("geolocation is avaliable");
-        navigator.geolocation.getCurrentPosition(position => {
+        navigator.geolocation.getCurrentPosition(async position => {
           console.log(position);
 
           const lat = round(position.coords.latitude, 2);
@@ -35,7 +35,9 @@
             },
             body: JSON.stringify(data)
           };
-          fetch("/api", options);
+          const response = await fetch("/api", options);
+          const json = await response.json();
+          console.log(data);
         });
       } else {
         console.log("geolocation is not avaliable");

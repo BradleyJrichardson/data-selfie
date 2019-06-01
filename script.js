@@ -6,10 +6,12 @@ server.use(express.json({ limit: "1mb" }));
 // telling the server to parse things it receives as json and to limit them to 1mb
 server.post("/api", (req, res) => {
   console.log(req.body);
-  response.json({
+  const data = req.body;
+
+  res.json({
     status: "success",
-    latitude: lat,
-    longitude: long
+    latitude: data.lat,
+    longitude: data.lon
   });
 });
 
