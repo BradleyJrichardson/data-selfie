@@ -10,8 +10,8 @@
     <script>
       if ("geolocation" in navigator) {
         console.log("geolocation is avaliable");
-        navigator.geolocation.getCurrentPosition(function(position) {
-          do_something(position.coords.latitude, position.coords.longitude);
+        navigator.geolocation.getCurrentPosition(position => {
+          console.log(position);
         });
       } else {
         console.log("geolocation is not avaliable");
